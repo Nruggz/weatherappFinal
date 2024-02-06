@@ -13,7 +13,7 @@ const SunRiseSet = (props) => {
     let moonIcon = Math.round(props.current.moon_phase * 28);
     let moonPhase = props.current.moon_phase * 100;
 
-    return(
+    return (
         <View>
             <Text style={styles.heading}>Solar</Text>
 
@@ -21,13 +21,13 @@ const SunRiseSet = (props) => {
                 <View style={styles.cell}>
                     <Icon name='wi-sunrise' style={styles.cellIcon} />
                     <Text style={styles.cellText}>Sunrise</Text>
-                    <Text style={styles.cellData}>{ sunriseDt.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', hour12: true } ) }</Text>
+                    <Text style={styles.cellData}>{sunriseDt.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', hour12: true })}</Text>
                 </View>
 
                 <View style={styles.cell}>
                     <Icon name='wi-sunset' style={styles.cellIcon} />
                     <Text style={styles.cellText}>Sunset</Text>
-                    <Text style={styles.cellData}>{ sunsetDt.toLocaleTimeString("en-US", {hour12: false, hour: '2-digit', minute: '2-digit' } ) }</Text>
+                    <Text style={styles.cellData}>{sunsetDt.toLocaleTimeString("en-US", { hour12: true, hour: '2-digit', minute: '2-digit' })}</Text>
                 </View>
 
 
@@ -46,19 +46,19 @@ const SunRiseSet = (props) => {
                 <View style={styles.cell}>
                     <Icon name='wi-moonrise' style={styles.cellIcon} />
                     <Text style={styles.cellText}>Moonrise</Text>
-                    <Text style={styles.cellData}>{ moonriseDt.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', hour12: true } ) }</Text>
+                    <Text style={styles.cellData}>{moonriseDt.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', hour12: true })}</Text>
                 </View>
 
                 <View style={styles.cell}>
                     <Icon name={Moon[moonIcon]} style={styles.cellIcon} />
                     <Text style={styles.cellText}>Current</Text>
-                    <Text style={{color: '#fff', fontSize: 10, fontWeight: '800'}}>{MoonPhase[moonIcon]}</Text>
+                    <Text style={{ color: '#fff', fontSize: 10, fontWeight: '800' }}>{MoonPhase[moonIcon]}</Text>
                 </View>
 
                 <View style={styles.cell}>
                     <Icon name='wi-moonset' style={styles.cellIcon} />
                     <Text style={styles.cellText}>Moonset</Text>
-                    <Text style={styles.cellData}>{ moonsetDt.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', hour12: true } ) }</Text>
+                    <Text style={styles.cellData}>{moonsetDt.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', hour12: true })}</Text>
                 </View>
 
             </View>

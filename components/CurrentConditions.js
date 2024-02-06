@@ -14,7 +14,7 @@ const CurrentConditions = (props) => {
 
     let imageSrc;
 
-    if(hour > 8 && hour < 18) imageSrc = Sunny;
+    if (hour > 8 && hour < 18) imageSrc = Sunny;
     else imageSrc = Moon;
 
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -26,41 +26,41 @@ const CurrentConditions = (props) => {
             <Text style={styles.location}>Huntington, WV</Text>
 
             <View style={styles.container}>
-                    <Text style={styles.heroText}>{props.current.weather[0].description.toUpperCase()}</Text>
-                    <Text style={styles.heroTextDate}>{days[currentDt.getDay()]}, {months[currentDt.getMonth()]} {currentDt.getDate()}</Text>
+                <Text style={styles.heroText}>{props.current.weather[0].description.toUpperCase()}</Text>
+                <Text style={styles.heroTextDate}>{days[currentDt.getDay()]}, {months[currentDt.getMonth()]} {currentDt.getDate()}</Text>
             </View>
-            
+
             <Image source={imageSrc} style={styles.heroImage} />
-            
+
             <ForecastSummary current={props.today} />
 
             <Text style={styles.location}>Details</Text>
             <View style={styles.detailRow}>
-                    <View style={styles.detailBox}>
-                        <Icon name="wi-thermometer" style={styles.detailIcon} />
-                        <Text style={styles.detailText}>Tempurature</Text>
-                        <Text style={styles.detailData}>{Math.round(props.current.temp)}&deg;F</Text>
-                    </View>
-                    
-                    <View style={styles.detailBox}>
-                        <Icon name="wi-thermometer-internal" style={styles.detailIcon} />
-                        <Text style={styles.detailText}>Feels Like</Text>
-                        <Text style={styles.detailData}>{Math.round(props.current.feels_like)}&deg;F</Text>
-                    </View>
-                    
-                    <View style={styles.detailBox}>
-                        <Icon name="wi-barometer" style={styles.detailIcon} />
-                        <Text style={styles.detailText}>Pressure</Text>
-                        <Text style={styles.detailData}>{props.current.pressure}</Text>
-                    </View>
-                    
-                    <View style={styles.detailBox}>
-                        <Icon name="wi-day-sunny" style={styles.detailIcon} />
-                        <Text style={styles.detailText}>UVI</Text>
-                        <Text style={styles.detailData}>{props.current.uvi}</Text>
-                    </View>
-                    
+                <View style={styles.detailBox}>
+                    <Icon name="wi-thermometer" style={styles.detailIcon} />
+                    <Text style={styles.detailText}>Tempurature</Text>
+                    <Text style={styles.detailData}>{Math.round(props.current.temp)}&deg;F</Text>
                 </View>
+
+                <View style={styles.detailBox}>
+                    <Icon name="wi-thermometer-internal" style={styles.detailIcon} />
+                    <Text style={styles.detailText}>Feels Like</Text>
+                    <Text style={styles.detailData}>{Math.round(props.current.feels_like)}&deg;F</Text>
+                </View>
+
+                <View style={styles.detailBox}>
+                    <Icon name="wi-barometer" style={styles.detailIcon} />
+                    <Text style={styles.detailText}>Pressure</Text>
+                    <Text style={styles.detailData}>{props.current.pressure}</Text>
+                </View>
+
+                <View style={styles.detailBox}>
+                    <Icon name="wi-day-sunny" style={styles.detailIcon} />
+                    <Text style={styles.detailText}>UVI</Text>
+                    <Text style={styles.detailData}>{props.current.uvi}</Text>
+                </View>
+
+            </View>
         </View>
     );
 }
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     },
     heroImage: {
         width: '100%',
-        height: undefined,
+        height: '50%',
         aspectRatio: 1,
         borderRadius: T.curve,
         resizeMode: 'cover',
